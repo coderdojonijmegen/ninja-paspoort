@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgQrScannerModule } from 'angular2-qrscanner';
 
+import {NinjaResourceService} from './api/services/ninja-resource.service'
+
 @NgModule({
   declarations: [
     AppComponent
@@ -16,7 +18,7 @@ import { NgQrScannerModule } from 'angular2-qrscanner';
 
   ],
   providers: [
-
+    NinjaResourceService
   ],
   bootstrap: [AppComponent]
 })
