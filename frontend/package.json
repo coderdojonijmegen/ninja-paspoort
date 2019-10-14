@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "ng": "ng",
-    "start:fe": "ng serve --aot --port=8080",
+    "start:fe": "ng serve --aot --port=8080"
   },
   "private": true,
   "dependencies": {
