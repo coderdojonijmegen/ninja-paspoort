@@ -4,9 +4,10 @@ import org.springframework.boot.gradle.tasks.bundling.BootJar
 plugins {
 	id("org.springframework.boot") version "2.1.9.RELEASE"
 	id("io.spring.dependency-management") version "1.0.8.RELEASE"
+	id("org.jetbrains.kotlin.plugin.spring") version "1.2.71"
+	id("org.jetbrains.kotlin.plugin.jpa") version "1.2.71"
+
 	kotlin("jvm") version "1.2.71"
-	kotlin("plugin.spring") version "1.2.71"
-	kotlin("plugin.jpa") version "1.2.71"
 	id("com.palantir.docker") version "0.22.1"
 }
 
@@ -26,6 +27,8 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	runtimeOnly("org.postgresql:postgresql")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	implementation("io.springfox:springfox-swagger2:2.7.0")
+	implementation("io.springfox:springfox-swagger-ui:2.7.0")
 }
 
 tasks.withType<KotlinCompile> {

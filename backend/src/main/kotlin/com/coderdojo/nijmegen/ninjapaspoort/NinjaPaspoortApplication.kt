@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class NinjaPaspoortApplication
 
 fun main(args: Array<String>) {
-	runApplication<NinjaPaspoortApplication>(*args)
+    runApplication<NinjaPaspoortApplication>(*args)
 }
