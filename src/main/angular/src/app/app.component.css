@@ -1,7 +1,20 @@
 video {
-  margin: auto 26%;
-  height: 50%;
-  width: 50%;
+  width: 20px;
+}
+
+div {
+  text-align: center;
+}
+
+#qrScannerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#qrScanner {
+  width: 200px;
+  height: 200px;
 }
 
 /*# sourceMappingURL=app.component.css.map */
