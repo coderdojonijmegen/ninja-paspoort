@@ -1,0 +1,20 @@
+version: '3'
+services:
+#  backend:
+#    image: com.coderdojo.nijmegen/ninja-paspoort
+#    ports:
+#      - "8080:8080"
+
+  db:
+    image: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+    - POSTGRES_USER=ninja
+    - POSTGRES_PASSWORD=Welkom01!
+    - POSTGRES_DB=ninja
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+volumes:
+  logvolume01: {}
