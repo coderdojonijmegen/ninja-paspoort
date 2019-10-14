@@ -1,17 +1,19 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<div>
   <h1>
     {{ title }}
   </h1>
   <p>Houd de qr code van je ninja paspoort voor je camera!</p>
 </div>
-
-<qr-scanner
+<div id="qrScannerContainer">
+<qr-scanner id="qrScanner"
   [debug]="debugNeeded"
   [canvasWidth]="canvasWidth"
   [canvasHeight]="canvasHeight"
   [stopAfterScan]="stopAfterScan"
-  [updateTime]="updateTime">
-</qr-scanner>
+  [updateTime]="updateTime"
+>
 
+</qr-scanner>
+</div>
 <router-outlet></router-outlet>

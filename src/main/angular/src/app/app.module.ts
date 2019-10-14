@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgQrScannerModule } from 'angular2-qrscanner';
 
+import { NinjaPaspoortService} from './services/ninja-paspoort.service'
+
 @NgModule({
   declarations: [
     AppComponent
@@ -15,7 +17,9 @@ import { NgQrScannerModule } from 'angular2-qrscanner';
     NgQrScannerModule,
 
   ],
-  providers: [],
+  providers: [
+    NinjaPaspoortService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
