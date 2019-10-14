@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.springframework.boot.gradle.tasks.bundling.BootJar
 
 plugins {
 	id("org.springframework.boot") version "2.1.9.RELEASE"
@@ -6,6 +7,7 @@ plugins {
 	kotlin("jvm") version "1.2.71"
 	kotlin("plugin.spring") version "1.2.71"
 	kotlin("plugin.jpa") version "1.2.71"
+	id("com.palantir.docker") version "0.22.1"
 }
 
 group = "com.coderdojo.nijmegen"
@@ -31,4 +33,14 @@ tasks.withType<KotlinCompile> {
 		freeCompilerArgs = listOf("-Xjsr305=strict")
 		jvmTarget = "1.8"
 	}
+}
+
+docker {
+	val bootJar: BootJar by tasks
+	val build by tasks
+
+	dependsOn(build)
+	name = "${project.group}/${bootJar.archiveBaseName.get()}"
+	files(bootJar.archiveFile.get().asFile)
+	buildArgs(mapOf("JAR_FILE" to bootJar.archiveFileName.get()))
 }
