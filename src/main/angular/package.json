@@ -1,13 +1,11 @@
 {
-  "name": "angular",
-  "version": "0.0.0",
+  "name": "ninja-paspoort-angular",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "start:fe": "ng serve --aot --port=8080",
+    "start:fe:mock": "yarn mocks:dev | ng serve --aot --port=8000 --proxy-config dev/proxy.config.json --disable-host-check "
   },
   "private": true,
   "dependencies": {
@@ -19,6 +17,7 @@
     "@angular/platform-browser": "~7.2.0",
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
+    "angular2-qrscanner": "^1.0.7",
     "core-js": "^2.5.4",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
