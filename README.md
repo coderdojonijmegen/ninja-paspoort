@@ -1,4 +1,4 @@
-# ninja-paspoort
+# Ninja paspoort
 
 ## Frontend
 
