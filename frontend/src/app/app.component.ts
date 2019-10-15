@@ -1,6 +1,8 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {QrScannerComponent} from 'angular2-qrscanner';
 
+import {NinjaResourceService} from "./api/services/ninja-resource.service";
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,11 +10,17 @@ import {QrScannerComponent} from 'angular2-qrscanner';
 })
 export class AppComponent implements OnInit {
   title = 'Ninja-paspoort';
-  debugNeeded="false";
-  canvasWidth="500";
-  canvasHeight="500";
-  stopAfterScan="true";
-  updateTime="500";
+  debugNeeded = "false";
+  canvasWidth = "500";
+  canvasHeight = "500";
+  stopAfterScan = "true";
+  updateTime = "500";
+
+  constructor(
+    private ninjaResource: NinjaResourceService
+  ) {
+  }
+
 
   @ViewChild(QrScannerComponent) qrScannerComponent: QrScannerComponent;
 
@@ -43,6 +51,12 @@ export class AppComponent implements OnInit {
 
     this.qrScannerComponent.capturedQr.subscribe(result => {
       console.log(result);
+      this.ninjaResource.findNinjaUsingGET(result).subscribe( () => {
+
+      }, (resonse: any) => {
+
+
+      })
 
     });
   }
